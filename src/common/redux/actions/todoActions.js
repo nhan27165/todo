@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, LIST_TODO, TODO_DETAIL } from "../models";
+import { ADD_TODO, REMOVE_TODO, LIST_TODO, DETAIL_TODO, COMPLETE_TODO } from "../models";
 
 export const addTodo = (id, task) => ({
 	type: ADD_TODO,
@@ -17,6 +17,11 @@ export const listTodo = (list) => ({
 })
 
 export const detailTodo = (todo) => ({
-  type: TODO_DETAIL,
+  type: DETAIL_TODO,
   todo
+})
+
+export const completeTodo = (id) => ({
+  type: COMPLETE_TODO,
+  id
 })

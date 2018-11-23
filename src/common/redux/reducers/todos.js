@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, LIST_TODO } from "../models";
+import {ADD_TODO, REMOVE_TODO, LIST_TODO, COMPLETE_TODO} from "../models";
 
 const todos = (state = [], action) => {
 	let newState = {};
@@ -8,7 +8,7 @@ const todos = (state = [], action) => {
 				...state,
 				{
 					id: action.id,
-					title: action.title,
+					title: action.task,
 					completed: false
 				}
 			];
@@ -22,6 +22,15 @@ const todos = (state = [], action) => {
 				...action.list
 			];
 			break;
+    case COMPLETE_TODO:
+      newState = state;
+    	for (let i = 0; i < newState.length; i++) {
+        if (newState[i].id === action.id) {
+          newState[i].completed = true;
+          break;
+        }
+			}
+      break;
 		default:
 			newState = state;
 	}

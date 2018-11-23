@@ -1,9 +1,9 @@
-import { TODO_DETAIL } from "../models";
+import { DETAIL_TODO } from "../models";
 
 const detailTodo = (state = {}, action) => {
 	let newState = {};
 	switch(action.type) {
-		case TODO_DETAIL:
+		case DETAIL_TODO:
 			newState = action.todo;
 			break;
 		default:

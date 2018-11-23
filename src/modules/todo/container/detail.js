@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import { stateDetailTodo } from '../model'
 import { detailTodo } from '../../../common/redux/actions/todoActions'
 import history from '../../../common/utility/history'
+import { updateTodoById } from '../../../common/redux/api/todos'
 
 const mapDispatchToProps = (dispatch) => ({
 	onSubmit: (todo) => {
 		dispatch(detailTodo(todo));
-    // history.push('/');
 	}
 })
 
