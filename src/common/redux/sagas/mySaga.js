@@ -3,7 +3,6 @@
 // //import axios from 'axios'
 //
 // async function getListAminal () {
-// 	//return axios.get(`https://dog.ceo/api/breeds/list`)
 // 	let api = await fetch(`https://dog.ceo/api/breeds/list`)
 // 	let data = await api.json()
 // 	return data.message
@@ -34,8 +33,8 @@
 //   dispatched while a fetch is already pending, that pending fetch is cancelled
 //   and only the latest one will be run.
 // */
-// function* mySaga() {
-//   yield takeLatest("SAGA_FETCH_REQUESTED", fetchData);
-// }
+// // function* mySaga() {
+// //   yield takeLatest("SAGA_FETCH_REQUESTED", fetchData);
+// // }
 //
 // export default mySaga;

@@ -12,11 +12,8 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-const mapStateToProps = (state) => {
-	console.log('state', state);
-	return {
+const mapStateToProps = (state) => ({
     todos: state[stateTodos]
-  }
-}
+  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

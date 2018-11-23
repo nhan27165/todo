@@ -5,12 +5,12 @@ const todos = (state = [], action) => {
 	switch(action.type) {
 		case ADD_TODO:
 			newState = [
-				...state,
-				{
-					id: action.id,
-					title: action.task,
-					completed: false
-				}
+        {
+          id: action.id,
+          title: action.task,
+          completed: false
+        },
+				...state
 			];
 			break;
 		case REMOVE_TODO:
@@ -22,8 +22,8 @@ const todos = (state = [], action) => {
 				...action.list
 			];
 			break;
-    case COMPLETE_TODO:
-      newState = state;
+		case COMPLETE_TODO:
+      newState = [...state];
     	for (let i = 0; i < newState.length; i++) {
         if (newState[i].id === action.id) {
           newState[i].completed = true;
