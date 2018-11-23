@@ -1,1 +1,2 @@
-export const moduleName = 'todos'
+export const stateTodos = 'todos'
+export const stateDetailTodo = 'detailTodo'

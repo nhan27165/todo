@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import todos from './reducers/todos'
-import animals from './reducers/animals'
+import detailTodo from "./reducers/detailTodo";
 
 export const reducer = combineReducers({
 	todos,
-	animals
+  detailTodo
 });

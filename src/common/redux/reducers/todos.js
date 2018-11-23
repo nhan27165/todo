@@ -1,20 +1,22 @@
+import { ADD_TODO, REMOVE_TODO, LIST_TODO } from "../models";
+
 const todos = (state = [], action) => {
 	let newState = {};
 	switch(action.type) {
-		case 'ADD_TODO':
+		case ADD_TODO:
 			newState = [
 				...state,
 				{
 					id: action.id,
-					task: action.task,
+					title: action.title,
 					completed: false
 				}
 			];
 			break;
-		case 'REMOVE_TODO':
+		case REMOVE_TODO:
 			newState = state.filter(todo => todo.id !== action.id);
 			break;
-		case 'LIST_TODO':
+		case LIST_TODO:
 			newState = [
 				...state,
 				...action.list

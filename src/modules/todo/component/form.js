@@ -1,52 +1,24 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
-class Form extends Component {
-	constructor (props) {
-		super (props)
-		
-		this.state = { task: '' }
-	}
+const Form = (props) => {
+	let task = ''
+	const { onSubmit, todos } = props;
 
-	inputTodoTask = (event) => {
-		this.setState({ task: event.target.value })
-	}
-	
-	submitData = (event) => {
-		const { onSubmit, todos } = this.props;
-		const { task } = this.state;
-		
-		onSubmit(task, todos);
-		this.setState({ task: '' });
-		event.preventDefault();
-	}
-	
-	onGetAnimals = (event) => {
-		const { onGetAnimals } = this.props;
-		onGetAnimals()
-		event.preventDefault()
-	}
-	
-	onGetSagaAnimals = (event) => {
-		const { onGetSagaAnimals } = this.props;
-		onGetSagaAnimals()
-		event.preventDefault()
-	}
-	
-	render () {
-		const { task } = this.state;
-
-		return (
-			<form onSubmit={this.submitData}>
-				<label>
-					Task: 
-					<input type='text' placeholder='To do task' value={task} onChange={this.inputTodoTask}/>
-				</label>
-				<input type='submit' value='Add task' />
-				<input type='button' value='Get animals' onClick={this.onGetAnimals} />
-				<input type='button' value='Get Saga animals' onClick={this.onGetSagaAnimals} />
-			</form>
-		);
-	}
+	return (
+		<div>
+      <form onSubmit={(e) => {
+        onSubmit(task, todos);
+        e.preventDefault();
+      }}>
+        <label>
+          Task:
+          <input type='text' placeholder='To do task' onChange={(e) => {task = e.target.value;}}/>
+        </label>
+        <input type='submit' value='Add task' />
+      </form>
+      <br/>
+		</div>
+	);
 }
 
 export default Form;

@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Grid extends Component {
-	shouldComponentUpdate(nextProps, nextState) {
-		return true
-	}
-	componentWillUpdate(nextProps, nextState) {
-		console.log('will')
-	}
-	componentDidUpdate(nextProps, nextState) {
-		console.log('did')
-	}
-
-	render () {console.log('a')
-		const { list, display } = this.props;
+const Grid = (props) => {
+		const { list, display } = props;
 
 		return list.map((item, ids) => {
 			let displayItems = display(item);
 			return <div key={ids}>{displayItems.map(displayItem => displayItem.render)}</div>;
 		})
-	}
 }
 
 export default Grid;
